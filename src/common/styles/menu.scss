@@ -60,6 +60,7 @@ body {
     margin-top: 1px;
     margin-bottom: 1px;
     padding: 13px 20px 16px 26px;
+    width: 100%;
 
 }
 
@@ -75,34 +76,29 @@ body {
     @include menu_content;
     color: #ffff;
     letter-spacing: 1px;
-    background-repeat: no-repeat;
-    background-size:20px 20px;
-    background-position:0% 50%;
     width: 100%;
     height: 27px;
     padding: 0;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: inherit;
-    padding-left: 32px;
-    &_movies {
-        background-image: url(../../assets/images/page-2.png);
-    }
-    &_photo{
-        background-image: url(../../assets/images/fill-1.png);
-    }
-    &_news {
-        background-image: url(../../assets/images/page-1.png);
-    }
-    &_watch {
-        background-image: url(../../assets/images/page-2.png);
-    }
-    :hover {
-        color: #27c6e7;
-    }
+    display: flex;
 }
+.sidebar-icons {
+    font-size: 26px;
+    color: #6b6b6b;
+}
+.mediaMenu_button .sidebar-icons:hover {
+    color: #f2d224;
+}
+
 .mediaMenu_button:hover {
     color: #f2d224;
+}
+
+
+.button_text {
+    padding-left: 10px;
 }
 
 
@@ -112,6 +108,7 @@ body {
     margin: 15px 26px;
     font-weight: bold;
     letter-spacing: 0.6px;
+    padding: 0;
 }
 
 .imdMenu_button{
@@ -119,9 +116,6 @@ body {
     color: #969696;
     margin: 15px 26px;
 }
-
-
-
 
 
 .IMD-main-button {
