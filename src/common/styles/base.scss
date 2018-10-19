@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
 * {
   box-sizing: border-box;
   &:active, &:hover, &:focus {
@@ -7,7 +9,7 @@
 
 html {
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 12px;
 }
@@ -31,3 +33,24 @@ ul, ol {
 a {
   text-decoration: none;
 }
+
+
+
+// @media screen and (min-width: 992px) {
+//   .grid__item{
+//       background-color: yellow;
+//   }
+// }
+
+// @media screen and (max-width: 786px){
+//   .grid__item{
+//       background-color: blueviolet;
+//   }
+// } 
+
+// @media screen and (max-width : 480px) {
+//   .grid__item {
+//       flex-grow:1;
+//       width: 100%;
+//       background-color: red;
+//   }
