@@ -9,127 +9,44 @@ $max-menu-width : 231px;
 @mixin menu_content {
     background-color: $background-menu-color;
     border: none;
-    font-size: 12px;
 }
     
-// }
-// .sidebar-icons {
-//     font-size: 26px;
-//     color: #6b6b6b;
-// }
-// .mediaMenu_button .sidebar-icons:hover {
-//     color: #f2d224;
-// }
-
-// .mediaMenu_button:hover {
-//     color: #f2d224;
-// }
 
 
-// .button_text {
-//     padding-left: 10px;
-// }
+.imdMenu_button{
+    @include menu_content;
+    color: #969696;
+    margin: 15px 26px;
+}
 
 
-// .acountMenu_button {
-//     @include menu_content;
-//     color: #969696;
-//     margin: 15px 26px;
-//     font-weight: bold;
-//     letter-spacing: 0.6px;
-//     padding: 0;
-// }
+.IMD-main-button {
+    background-color: #0b0b0b;
+    width: 100%;
+    height: 49px;
+    color: #ffff;
+    border: none;
+    text-align: left;
+    padding-left: 32px;
+}
 
-// .imdMenu_button{
-//     @include menu_content;
-//     color: #969696;
-//     margin: 15px 26px;
-// }
+.imd {
+    color: #27c6e7;
+}
 
+.img__center {
+    width: 670px;
+    background-image: url(../../assets/images/main_merry1.png);
+    height:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position:-110px -9px;
+    background-size:cover;
+    margin-left: 126px;
+    margin-top: -30px;
+    box-shadow: -181px 214px 89px 0 rgba(0, 0, 0, 0.5);
+}
 
-// .IMD-main-button {
-//     background-color: #0b0b0b;
-//     width: 100%;
-//     height: 49px;
-//     color: #ffff;
-//     border: none;
-//     text-align: left;
-//     padding-left: 32px;
-// }
-
-// .myAcount {
-//     color: #ffff;
-//     margin-left:32px;
-//     padding-top: 31px;
-//     letter-spacing: 1.2px;
-//     font-size: 14px;
-//     font-weight: 900;
-// }
-
-// .facebook {
-//     color: #5083f2;
-// }
-
-// .imd {
-//     color: #27c6e7;
-// }
-
-// .main_block {
-//     display: flex;
-//     position: relative;
-// }
-
-
-
-// .img__center {
-//     width: 670px;
-//     background-image: url(../../assets/images/main_merry1.png);
-//     height: 985px;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     margin-left: 126px;
-//     margin-top: 60px;
-//     background-position: -133px;
-
-// }
-
-// .main__content {
-//     background-color: rgb(151, 99, 99);
-//     width:645px;
-// }
-
-// .header {
-//     position: absolute;
-//     margin-left: 231px;
-//     width: 100%;
-//     max-width: 1210px;
-//     height: 92px;
-//     // opacity: 0.1;
-//     // background-color: #ffffff;
-//     background-color: rgba(255, 255, 255, 0.1);
-// }
-
-// .navbar {
-//     background-color: red;
-//     position: absolute;
-//     top: 50%;
-//     right: 0;
-//     transform: translateY(-50%);
-//     font-family: Lato;
-
-// }
-
-// .navbar__item {
-//     text-decoration: none;
-//     color: #ffff;
-//     font-size: 13px;
-//     letter-spacing: 0.9px;
-//     text-align: right;
-//     color: #ffffff;
-//     padding: 13px;
-
-// }
 
 body {
     background:linear-gradient(51deg, #6f44a4, #475aa7)
@@ -137,11 +54,13 @@ body {
 
 .main__block {
     position: relative;
-    width: 100%;
+    height: 100%;
 }
 .main__content {
     max-width:1440px;
+    height: 100%;
     margin: 0 auto;
+    display: flex;
 }
 
 .header {
@@ -155,7 +74,14 @@ body {
         display: flex;
         justify-content: space-between;
     }
+    &__nav_line {
+        background-color: #ffffff;
+        height: 1px;
+        display: none;
+    }
 }
+
+
 
 .logo {
 background-image: url(../../assets/images/logo.jpg);
@@ -177,9 +103,18 @@ flex-shrink: 0;
     margin-right: 55px;
 }
 
+.navbar__items {
+    display: flex;
+    flex-direction: column;
+    &:hover {
+        .header__nav_line {
+            display: block;
+        }
+    }
+    
+}
 .navbar__item {
     padding: 14px 7px;
-    padding-bottom: 14px;
     font-size: 13px;
     color: #ffffff;
     letter-spacing: 0.9px;
@@ -188,11 +123,10 @@ flex-shrink: 0;
 
 //////////menu///////////////////////
     
-
 .menu {
 background-color: #171717;
 max-width: 231px;
-height: 100vh;
+height: 100%;
 position: absolute;
 }
 
@@ -246,31 +180,186 @@ position: absolute;
     height: 41px;
     font-size: 12px;
     &:hover {
-     color:yellow;
+     color:#f2d224;
      .sidebar-icons {
-         color: yellow;
+         color: #f2d224;
      }
     }
 }
-
-@mixin menu_button {
-    border: none;
-}
-
-
 .sidebar-icons {
     color: #6b6b6b;
     font-size: 19px;
     padding-right: 10px;
 }
-.button_text {
+.menu__media_button-text {
     font-size: 12px;
     text-align: left;
 }
 
-// test test test test test test test test 
-// test test test test test test test test 
-// test test test test test test test test 
-// test test test test test test test test 
-// test test test test test test test test 
-// test test test test test test test test 
+
+///////
+.menu__acount_items{
+    width: 100%;
+    padding : 31px 0 22px 0;
+    height: 190px;
+}
+
+.myAccount {
+    padding: 0 0 20px 25px;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+}
+
+.menu__acount_item {
+    @include menu_content;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    padding-left: 25px;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: #969696;
+    height: 33px;
+    &-facebook {
+        color: #5083f2;
+    }
+}
+///////////////////////////////
+
+
+.page__content {
+    // background-color: red;
+    width: 580px;
+    height: 100%;
+    margin-right: 55px;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.page__label {
+    display: flex;
+    width: 100%;
+    height: 67px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.label__items {
+    height: 33px;
+    border-radius: 100px;
+    box-shadow: 3px 3px 13px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.18);
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+        width: 120px;
+        margin-left: 17px;
+    }
+}
+
+.label__item {
+    opacity: 1;
+    &_text {
+        margin-left: 12px;
+    }
+}
+
+.ball {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    font-size: 14px;
+    width: 22px;
+    height: 22px;
+    color: #e4d357;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flash {
+    width: 19px;
+    height: 12px;
+}
+
+.page__content_banner {
+    font-size: 90px;
+    color: #ffffff;
+    padding-top: 8px;
+  }
+
+  .small-menu {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #b6b2d2;
+    margin: 13px 0 30px 0;
+  }
+
+  .page__content_text {
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: 1.2px;
+  }
+
+  .page__content_date {
+    margin:34px 0 38px 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:  #a693e4
+  }
+
+  .page__content_line {
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+    background-color: #ffffff;
+    margin: 38px 0 34px 0;
+  }
+
+.known-for {
+    display: flex;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        &_name {
+            font-size: 24px; 
+        }
+        &_button {
+            height: 9px;
+            width: 9px;
+            border-radius: 100%;
+            background-color: white;
+            border: none;
+            padding: 0;
+        }
+    }
+    &__films {
+        display: flex;
+    }
+    &__film {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.film {
+    width: 126px;
+    height: 40px;
+    &_1{
+    background-image: url(../../assets/images/Kramer.jpg);
+    }
+    &_2 {
+    background-image: url(../../assets/images/Kramer.jpg);
+    }
+    &_3 {
+    background-image: url(../../assets/images/Kramer.jpg);
+    }
+}
+
+
+

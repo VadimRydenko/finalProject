@@ -10,7 +10,7 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],
-        "lesson-12":['./src/lesson-12/lesson-12.js'],
+        // "lesson-12":['./src/lesson-12/lesson-12.js'],
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
