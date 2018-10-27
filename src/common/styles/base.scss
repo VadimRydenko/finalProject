@@ -38,41 +38,120 @@ a {
 
 
 
-@media screen and (min-width :1024px) and ( max-width : 1282px) {
-  .sidebar-menu {
-    display: none;
-  }
-  .main-content .img__center {
-    margin: 0px;
-    background-position:-235px -15px;
+// @media screen and (min-width :1024px) and ( max-width : 1282px) {
+//   .sidebar-menu {
+//     display: none;
+//   }
+//   .main-content .img__center {
+//     margin: 0px;
+//     background-position:-235px -15px;
 
-  }
+//   }
 
-}
+// }
 
-@media screen and (max-width: 992px) {
-  .page__content_banner {
-    background-color: yellow;
-  }
-  .main-content {
-    justify-content: space-between;
-    }
-  .page__content {
-    margin-left: 15px;
-  }
-  .img__center {
-    display: none;
+// // @media screen and (max-width: 992px) {
+// //   .page__content_banner {
+// //     background-color: yellow;
+// //   }
+// //   .main-content {
+// //     justify-content: space-between;
+// //     }
+// //   .page__content {
+// //     margin-left: 15px;
+// //   }
+// //   .img__center {
+// //     display: none;
+// //   }
+// //   .sidebar-menu {
+// //     position: static;
+// //   }
+// // }
+
+// @media screen and (max-width: 786px){
+//   .page__content_banner {
+//     background-color: blueviolet;
+//   }
+// } 
+
+// @media screen and (max-width : 480px) {
+//   .page__content_banner {
+//     background-color: red;
+//   }
+// }
+
+@media screen and (min-width: 992px) {
+  .grid__item{
+      background-color: yellow;
   }
 }
 
 @media screen and (max-width: 786px){
-  .page__content_banner {
-    background-color: blueviolet;
+  .grid__item{
+      background-color: blueviolet;
   }
 } 
 
 @media screen and (max-width : 480px) {
-  .page__content_banner {
-    background-color: red;
+  .header {
+    height: 100%;
+    &__content {
+      flex-direction: column;
+    }
+    &__logo {
+      width: 100%;
+      background-position: 0px;
+    }
+  }
+  .navbar {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+  .main-content {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .page-content {
+    width: 100%;
+    margin: 0 5px 0 5px;
+  }
+  .sidebar-menu {
+    display: none;
+  }
+
+  .img__center {
+    display: none;
+  }
+  .page-content_banner {
+    width: 100%;
+    font-size: 60px;
+  }
+  .sidebar-menu-mobile {
+    display: block;
+    position: fixed;
+    background-color: #171717;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: -5px;
+    display: flex;
+    justify-content: space-around;;
+    flex-direction: column;
+    &__line {
+      width: 30px;
+      height: 3px;
+      background-color: #ffffff;
+    }
+    &:hover {
+      .sidebar-menu-mobile__line{
+      background-color: #f2d224;
+      }
+    }
+  }
+  .known-for__films {
+    margin: 0;
+
   }
 }
