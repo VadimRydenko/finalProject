@@ -38,15 +38,7 @@ a {
 
 
 
-@media screen and (max-width :1025px) {
-  .page-content_banner {
-    width: 100%;
-    font-size: 90px;
-  }
-  .main-content {
-    justify-content: space-between;
-    }
-
+@media screen and (max-width :1125px) {
   .navbar {
     width: 100%;
   }
@@ -59,6 +51,7 @@ a {
   }
   .sidebar-menu {
     position: static;
+    height: initial;
   }
 }
 
@@ -78,6 +71,7 @@ a {
   }
   .sidebar-menu {
     position: static;
+    height: initial;
   }
 }
 
@@ -86,8 +80,8 @@ a {
       width: 100%;
       font-size: 80px;
   }
-  .sidebar-menu {
-    height: 100vh;
+  .page-content {
+    min-width: 500px;
   }
 } 
 
@@ -111,6 +105,7 @@ a {
     width: 100%;
   }
   .page-content {
+    min-width:initial;
     width: 100%;
     margin: 0 5px 0 5px;
   }

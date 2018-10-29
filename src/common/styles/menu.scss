@@ -2,16 +2,13 @@
 @import './mixins';
    
 
-$background-menu-color :#171717;
-$max-menu-width : 231px;
-
 @mixin menu_content {
-    background-color: $background-menu-color;
+    background-color: $menu-background-color;
     border: none;
 }
 
 body {
-    background:linear-gradient(51deg, #6f44a4, #475aa7)
+    background: $background-color;
   }
 
 .main-block {
@@ -21,7 +18,7 @@ body {
 .header {
     width: 100%;
     height: 92px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $header-background-color;
     &__content {
         max-width: 1440px;
         margin: 0 auto;
@@ -37,9 +34,8 @@ body {
         background-size: cover;
         background-size:103%;
         font-size: 56px;
-        color: red;
         flex-shrink: 0;
-        }
+    }
 }
 
 .navbar {
@@ -60,11 +56,11 @@ body {
     &__item {
         padding: 14px 7px;
         font-size: 13px;
-        color: #ffffff;
+        color: $navbar-item-color;
         letter-spacing: 0.9px;
         text-align: center;
         &_line {
-        background-color: #ffffff;
+        background-color: $navbar-item-line-color;
         height: 1px;
         display: none;   
         }
@@ -80,8 +76,8 @@ body {
 
 
 .sidebar-menu {
-    background-color: #171717;
-    height: 932px;
+    background-color:$sidebar-menu-color;
+    height: 100%;
     position: absolute;
     &__search {
         height: 91px;
@@ -91,8 +87,8 @@ body {
         align-items: center;
         padding: 0 24px;
         &_imput {
-            color: #bbbbbb;
-            background-color: #313131;
+            color: $sidebar-imput-color;
+            background-color: $sidebar-imput-background-color;
             width: 153px;
             border-top-left-radius: 100px;
             border-bottom-left-radius: 100px;
@@ -105,7 +101,7 @@ body {
             cursor: text;
         }
         &_button {
-            background-color: #313131;
+            background-color: $sidebar-menu-button-color;
             border-top-right-radius: 100px;
             border-bottom-right-radius: 100px;
             padding: 0;
@@ -115,15 +111,16 @@ body {
             background-image: url(../../assets/images/search.png);
             background-repeat: no-repeat;
             background-size:22px 22px;
-            background-color: #313131;
+            background-color: $sidebar-menu-button-background-color;
             background-position:0% 50%;
+            cursor: pointer;
         }
     }
     &__divider {
         max-width: 231px;
         height: 1px;
         opacity: 0.11;
-        background-color: #d8d8d8;
+        background-color: $divider-color;
     }
     &__media-items {
         height: 219px;
@@ -131,19 +128,19 @@ body {
     }
     &__media_button {
         @include menu_content;
-        color: #ffffff;
+        color: $media-button-color;
         letter-spacing: 1px;
         width: 100%;
         padding: 13px 20px;
         display: flex;
-        justify-content: right;
+        justify-content: left;
         height: 41px;
         font-size: 12px;
         cursor: pointer;
         &:hover {
-         color:#f2d224;
+         color:$media-button-hover-color;
          .sidebar-menu__media_icons {
-             color: #f2d224;
+             color: $media-button-hover-color;
             }
         }
         &_text {
@@ -151,13 +148,8 @@ body {
             text-align: left;
         }
     }
-    &_icons {
-        color: #6b6b6b;
-        font-size: 19px;
-        padding-right: 10px; 
-    }
     &__media_icons {
-        color: #6b6b6b;
+        color: $media-button-icons-color;
         font-size: 19px;
         padding-right: 10px;
     }
@@ -187,6 +179,13 @@ body {
             }
         }
     }
+    &__imd_items{
+        visibility: hidden;
+        opacity: 0;
+        transition: all 500ms;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
         &__button {
         @include menu_content;
         color: #969696;
@@ -197,13 +196,17 @@ body {
         background-color: #0b0b0b;
         width: 100%;
         height: 49px;
-        color: #ffff;
+        color: #ffffff;
         border: none;
         text-align: left;
         padding-left: 32px;
+        display: flex;
         cursor: pointer;
+
             &_imd{
                 color: #27c6e7;
+                align-self: flex-start;
+                padding-right: 112px;
             }
         }
         &_chevron {
@@ -215,12 +218,26 @@ body {
     }
 }
 
+.open {
+    .sidebar-menu__imd_items {
+        transform: scaleY(1);
+        transform-origin: top;
+        visibility: visible;
+        opacity: 1;
+    }
+    .fa-chevron-right {
+        transform: rotate(90deg);
+        transition: all 500ms;
+    }
+}
+
 
 .fa-chevron-right {
     color: #6b6b6b;
     width: 7px;
     height: 11.6px;
-    padding-left: 112px;
+    transform: rotate(0deg);
+    transition: all 500ms;
 }
 
 .img__center {
@@ -260,7 +277,7 @@ body {
     border-radius: 100px;
     box-shadow: 3px 3px 13px 0 rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.18);
-    color: #ffff;
+    color: #ffffff;
     width: 170px;
     display: flex;
     align-items: center;
@@ -302,7 +319,8 @@ body {
     font-size: 90px;
     color: #ffffff;
     padding-top: 8px;
-    width: 580px;
+    // width: 580px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -463,3 +481,8 @@ p { white-space: nowrap; }
 .sidebar-menu-mobile {
     display: none;
 }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } 
+input:focus::-moz-placeholder { color:transparent; } 
+input:focus:-ms-input-placeholder { color:transparent; } 
