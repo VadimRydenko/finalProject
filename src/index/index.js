@@ -20,7 +20,24 @@ function toggle () {
 button.onclick = toggle;
 
 
+const mobileButton = document.querySelector('.sidebar-mobile-burger');
+const sidebarMenu = document.querySelector('.main-content');
 
+function closeSidebar () {
+    sidebarMenu.classList.remove ('main-content-mobile-open');
+}
+function opeSidebarn () {
+    sidebarMenu.classList.add ('main-content-mobile-open');
+}
+function mobileToggle () {
+    if (sidebarMenu.classList.contains('main-content-mobile-open')){
+        closeSidebar ();
+    }else {
+        opeSidebarn ();
+    }
+}
 
+mobileButton.onclick = mobileToggle;
+document.addEventListener('swiped-left', closeSidebar());
 
 

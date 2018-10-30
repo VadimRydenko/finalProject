@@ -76,6 +76,7 @@ body {
 
 
 .sidebar-menu {
+    max-width: $sidebar-width;
     background-color:$sidebar-menu-color;
     height: 100%;
     position: absolute;
@@ -180,11 +181,11 @@ body {
         }
     }
     &__imd_items{
-        visibility: hidden;
-        opacity: 0;
-        transition: all 500ms;
-        transform: scaleY(0);
+        transform: scaleY(1);
         transform-origin: top;
+        visibility: visible;
+        transition: all 500ms;
+        opacity: 1;
     }
         &__button {
         @include menu_content;
@@ -220,13 +221,17 @@ body {
 
 .open {
     .sidebar-menu__imd_items {
-        transform: scaleY(1);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 500ms;
+        transform: scaleY(0);
         transform-origin: top;
-        visibility: visible;
-        opacity: 1;
     }
     .fa-chevron-right {
-        transform: rotate(90deg);
+        color: #6b6b6b;
+        width: 7px;
+        height: 11.6px;
+        transform: rotate(0deg);
         transition: all 500ms;
     }
 }
@@ -235,8 +240,7 @@ body {
 .fa-chevron-right {
     color: #6b6b6b;
     width: 7px;
-    height: 11.6px;
-    transform: rotate(0deg);
+    transform: rotate(90deg);
     transition: all 500ms;
 }
 
@@ -319,7 +323,6 @@ body {
     font-size: 90px;
     color: #ffffff;
     padding-top: 8px;
-    // width: 580px;
     width: 100%;
     margin: 0 auto;
   }
@@ -478,11 +481,34 @@ body {
 
 p { white-space: nowrap; }
 
-.sidebar-menu-mobile {
-    display: none;
-}
+
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; } 
 input:focus::-moz-placeholder { color:transparent; } 
 input:focus:-ms-input-placeholder { color:transparent; } 
+
+
+.sidebar-mobile-burger {
+    display: none;
+    position: fixed;
+    background-color: #171717;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: -5px;
+    justify-content: space-around;;
+    flex-direction: column;
+    &__line {
+      width: 30px;
+      height: 3px;
+      background-color: #ffffff;
+    }
+    &:hover {
+      .sidebar-mobile-burger__line {
+      background-color: #f2d224;
+      }
+    }
+}
+
+

@@ -107,10 +107,15 @@ a {
   .page-content {
     min-width:initial;
     width: 100%;
-    margin: 0 5px 0 5px;
   }
   .sidebar-menu {
-    display: none;
+    // display: none; /////!!!!!!
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 500ms;
+    transform: scaleX(0);
+    transform-origin: left;
   }
 
   .img__center {
@@ -120,30 +125,41 @@ a {
     width: 100%;
     font-size: 60px;
   }
-  .sidebar-menu-mobile {
-    display: block;
-    position: fixed;
-    background-color: #171717;
-    border: none;
-    width: 40px;
-    height: 40px;
-    margin-left: -5px;
-    display: flex;
-    justify-content: space-around;;
-    flex-direction: column;
-    &__line {
-      width: 30px;
-      height: 3px;
-      background-color: #ffffff;
-    }
-    &:hover {
-      .sidebar-menu-mobile__line{
-      background-color: #f2d224;
-      }
-    }
-  }
   .known-for__films {
     margin: 0;
-
   }
-}
+  .sidebar-mobile-burger{
+    display: flex;
+    }
+}    
+
+  .main-content-mobile-open{
+    .sidebar-menu {
+    transform: scaleX(1);
+    transform-origin: left;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    }
+    .sidebar-mobile-burger {
+      // width: calc(100% - #{$padding-left*2});
+      // margin-left:calc($sidebar-width)
+      // margin-left:$sidebar-width;
+      transform: translateX(231px);
+      transition: all 500ms;
+    }
+    .burger1 {
+      transition: all 500ms;
+      -webkit-transform: rotate(-45deg) translate(-9px, 8px);
+      transform: rotate(-45deg) translate(-9px, 8px);
+    }
+    .burger2 {
+      transition: all 500ms;
+      opacity: 0;
+    }
+    .burger3 {
+      transition: all 500ms;
+      -webkit-transform: rotate(45deg) translate(-9px, -8px);
+      transform: rotate(45deg) translate(-9px, -8px);
+    }
+  }
