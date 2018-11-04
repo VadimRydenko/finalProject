@@ -38,6 +38,4 @@ function mobileToggle () {
 }
 
 mobileButton.onclick = mobileToggle;
-document.addEventListener('swiped-left', closeSidebar());
-
-
+// document.addEventListener('swiped-left', closeSidebar());
